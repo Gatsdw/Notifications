@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
                     getSystemService(Context.NOTIFICATION_SERVICE);
             String NOTIFICATION_CHANNEL_ID = "notichan";
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "My Notifications", NotificationManager.IMPORTANCE_DEFAULT);
-                notificationChannel.setDescription("Sample Channel description");
+                NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Pow", NotificationManager.IMPORTANCE_DEFAULT);
                 notificationChannel.setLightColor(Color.RED);
                 notificationManager.createNotificationChannel(notificationChannel);
             }
@@ -57,8 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     getSystemService(Context.NOTIFICATION_SERVICE);
             String NOTIFICATION_CHANNEL_ID = "notichan";
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "My Notifications", NotificationManager.IMPORTANCE_DEFAULT);
-                notificationChannel.setDescription("Sample Channel description");
+                NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Pow", NotificationManager.IMPORTANCE_DEFAULT);
                 notificationChannel.setLightColor(Color.RED);
                 notificationManager.createNotificationChannel(notificationChannel);
             }
@@ -68,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     .setWhen(System.currentTimeMillis())
                     .setSmallIcon(R.drawable.dice1)
                     .setContentTitle("Powiadomienie")
-                    .setContentText("Duży tekst")
+                    .setContentText("Duże zdjęcie")
                     .setStyle(new NotificationCompat.BigPictureStyle());
             notificationManager.notify(1, notificationBuilder.build());
             return null;
@@ -78,8 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 getSystemService(Context.NOTIFICATION_SERVICE);
         String NOTIFICATION_CHANNEL_ID = "notichan";
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "My Notifications", NotificationManager.IMPORTANCE_DEFAULT);
-            notificationChannel.setDescription("Sample Channel description");
+            NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "Pow", NotificationManager.IMPORTANCE_DEFAULT);
             notificationChannel.setLightColor(Color.RED);
             notificationManager.createNotificationChannel(notificationChannel);
         }
@@ -89,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 .setWhen(System.currentTimeMillis())
                 .setSmallIcon(R.drawable.dice1)
                 .setContentTitle("Powiadomienie")
-                .setContentText("Duży tekst")
+                .setContentText("Pare linijek Pare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijekPare linijek")
                 .setStyle(new NotificationCompat.InboxStyle());
         notificationManager.notify(1, notificationBuilder.build());
         return null;
