@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         findViewById(R.id.pow1).setOnClickListener(notificationDialog());
-        findViewById(R.id.pow2);
-        findViewById(R.id.pow3);
+        findViewById(R.id.pow2).setOnClickListener(notificationDialog2());
+        findViewById(R.id.pow3).setOnClickListener(notificationDialog3());
     }
         private View.OnClickListener notificationDialog() {
             NotificationManager notificationManager = (NotificationManager)
@@ -45,11 +45,58 @@ public class MainActivity extends AppCompatActivity {
             notificationBuilder.setAutoCancel(true)
                     .setDefaults(Notification.DEFAULT_ALL)
                     .setWhen(System.currentTimeMillis())
-                    .setSmallIcon(R.mipmap.ic_launcher)
-                    .setContentTitle("sample notification")
-                    .setContentText("This is sample notification")
-                    .setContentInfo("Information");
+                    .setSmallIcon(R.drawable.dice1)
+                    .setContentTitle("Powiadomienie")
+                    .setContentText("Duży tekst")
+                    .setStyle(new NotificationCompat.BigTextStyle());
             notificationManager.notify(1, notificationBuilder.build());
             return null;
         }
+        private View.OnClickListener notificationDialog2() {
+            NotificationManager notificationManager = (NotificationManager)
+                    getSystemService(Context.NOTIFICATION_SERVICE);
+            String NOTIFICATION_CHANNEL_ID = "notichan";
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "My Notifications", NotificationManager.IMPORTANCE_DEFAULT);
+                notificationChannel.setDescription("Sample Channel description");
+                notificationChannel.setLightColor(Color.RED);
+                notificationManager.createNotificationChannel(notificationChannel);
+            }
+            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
+            notificationBuilder.setAutoCancel(true)
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .setWhen(System.currentTimeMillis())
+                    .setSmallIcon(R.drawable.dice1)
+                    .setContentTitle("Powiadomienie")
+                    .setContentText("Duży tekst")
+                    .setStyle(new NotificationCompat.BigPictureStyle());
+            notificationManager.notify(1, notificationBuilder.build());
+            return null;
+        }
+    private View.OnClickListener notificationDialog3() {
+        NotificationManager notificationManager = (NotificationManager)
+                getSystemService(Context.NOTIFICATION_SERVICE);
+        String NOTIFICATION_CHANNEL_ID = "notichan";
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel notificationChannel = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "My Notifications", NotificationManager.IMPORTANCE_DEFAULT);
+            notificationChannel.setDescription("Sample Channel description");
+            notificationChannel.setLightColor(Color.RED);
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID);
+        notificationBuilder.setAutoCancel(true)
+                .setDefaults(Notification.DEFAULT_ALL)
+                .setWhen(System.currentTimeMillis())
+                .setSmallIcon(R.drawable.dice1)
+                .setContentTitle("Powiadomienie")
+                .setContentText("Duży tekst")
+                .setStyle(new NotificationCompat.InboxStyle());
+        notificationManager.notify(1, notificationBuilder.build());
+        return null;
     }
+}
+
+
+
+
+
